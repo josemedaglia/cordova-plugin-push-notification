@@ -51,13 +51,12 @@
             </receiver>
             <service android:name="com.plugin.gcm.GCMIntentService" />
         </config-file>
+        <framework src="com.android.support:support-v13:23+" />
         <source-file src="src/android/libs/gcm.jar" target-dir="libs/" />
         <source-file src="src/android/com/plugin/gcm/CordovaGCMBroadcastReceiver.java" target-dir="src/com/plugin/gcm/" />
         <source-file src="src/android/com/plugin/gcm/GCMIntentService.java" target-dir="src/com/plugin/gcm/" />
         <source-file src="src/android/com/plugin/gcm/PushHandlerActivity.java" target-dir="src/com/plugin/gcm/" />
         <source-file src="src/android/com/plugin/gcm/PushPlugin.java" target-dir="src/com/plugin/gcm/" />
-
-        <dependency id="android.support.v4" url="https://github.com/zckrs/cordova-plugin-android-support-v4.git" />
     </platform>
 
     <!-- amazon-fireos -->
