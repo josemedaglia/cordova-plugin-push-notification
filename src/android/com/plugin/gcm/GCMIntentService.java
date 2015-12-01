@@ -103,7 +103,7 @@ public class GCMIntentService extends GCMBaseIntentService {
       .setContentIntent(contentIntent)
       .setAutoCancel(true);
 
-    mBuilder.setColor(0xffd10000);
+    //mBuilder.setColor(0xffd10000);
 
     String message = extras.getString("message");
     if (message != null) {
