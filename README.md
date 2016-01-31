@@ -189,6 +189,12 @@ Otherwise a new activity instance, with a new webview, will be created when acti
 <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
 ```
 
+7) Modify `res/xml/config.xml` to set config options to let the plugin know which color background should be used for notification overlays (argb). 
+
+```xml
+<preference name="push-plugin-notification-color" value="0xFF3377AA" />
+```
+
 ### Manual Installation for iOS
 
 Copy the following files to your project's Plugins folder:

@@ -103,20 +103,23 @@ public class GCMIntentService extends GCMBaseIntentService {
       .setContentIntent(contentIntent)
       .setAutoCancel(true);
 
-    //mBuilder.setColor(0xffd10000);
+    String message = extras.getString("message", "<missing message content>");
+    mBuilder.setContentText(message);
 
-	String message = extras.getString("message", "<missing message content>");
-	mBuilder.setContentText(message);
+    int color = PushPlugin.notificationColor();
+    if (color != 0) {
+      mBuilder.setColor(color);
+    }
 
-	//Android 4.1 (Jelly Bean) added support for large-format notifications
-	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-		mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(message));
-	}
+    //Android 4.1 (Jelly Bean) added support for large-format notifications
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+      mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(message));
+    }
 
-	String subtext = extras.getString("subtext");
-	if (subtext != null) {
-		mBuilder.setSubText(subtext);
-	}
+    String subtext = extras.getString("subtext");
+    if (subtext != null) {
+      mBuilder.setSubText(subtext);
+    }
 
     String msgcnt = extras.getString("msgcnt");
     if (msgcnt != null) {
